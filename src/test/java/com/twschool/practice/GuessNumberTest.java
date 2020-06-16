@@ -55,4 +55,16 @@ public class GuessNumberTest {
         //then
         Assert.assertEquals("0A0B",answerResult);
     }
+
+    @Test
+    public void should_return_0A2B_when_given_1234_and_5678(){
+        //given
+        String userAnswer = "1 2 3 4";
+        List<String> userAnswerList = converse.converse(userAnswer);
+        String gameAnswer = "5417";
+        //when
+        String answerResult = guessNumber.count(userAnswerList,gameAnswer);
+        //then
+        Assert.assertEquals("0A2B",answerResult);
+    }
 }
