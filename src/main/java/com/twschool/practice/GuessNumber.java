@@ -32,6 +32,13 @@ public class GuessNumber {
     }
 
     public String formatOutPut(int sameCount,int sameSpaceNumber){
-        return sameSpaceNumber+"A"+(sameCount-sameSpaceNumber)+"B";
+        String output = sameSpaceNumber+"A"+(sameCount-sameSpaceNumber)+"B";
+        if (sameSpaceNumber ==0 && (sameCount-sameSpaceNumber)==4) return output+"   4 numbers position wrong";
+        if (sameSpaceNumber ==4 && (sameCount-sameSpaceNumber)==0) return output+"   win, all correct";
+        if (sameSpaceNumber ==0 && (sameCount-sameSpaceNumber)==0) return output+"   all wrong";
+        if ((sameCount-sameSpaceNumber)==0) return output+" "+sameSpaceNumber+" correct";
+        if (sameSpaceNumber==0) return output+" "+(sameCount-sameSpaceNumber)+" and 4 wrong position";
+        if (sameSpaceNumber >0 && (sameCount-sameSpaceNumber)>0) return output+"  4 correct，2 and 3 wrong position";
+        return output;
     }
 }
