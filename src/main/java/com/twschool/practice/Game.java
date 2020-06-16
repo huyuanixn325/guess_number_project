@@ -1,7 +1,19 @@
 package com.twschool.practice;
 
-public class Game{
+import java.util.List;
 
+public class Game{
+    public String game(String gameAnswer,String inputLine){
+        boolean isValid = isValid(inputLine);
+        Converse converse = new Converse();
+        GuessNumber guessNumber = new GuessNumber();
+        if (isValid) {
+            List<String> inputList = converse.converse(inputLine);
+            return guessNumber.count(inputList,gameAnswer);
+        }else {
+            return " Wrong Input，Input again";
+        }
+    }
     public boolean isValid(String input){
         String[] inputNumbers = input.split(" ");
         if (inputNumbers.length!=4){
