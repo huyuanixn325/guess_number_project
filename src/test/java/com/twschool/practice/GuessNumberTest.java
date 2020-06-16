@@ -67,4 +67,5 @@ public class GuessNumberTest {
         //then
         Assert.assertEquals("0A2B",answerResult);
     }
+
 }
