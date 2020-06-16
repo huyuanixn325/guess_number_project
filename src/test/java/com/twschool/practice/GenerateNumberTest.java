@@ -12,8 +12,8 @@ public class GenerateNumberTest {
         //given
         int length = 4;
         //when
-        List<String> gameNumberList = generateNumber.generateNumber(length);
+        String gameNumber = generateNumber.generateNumber(length);
         //then
-        Assert.assertEquals(4,gameNumberList.size());
+        Assert.assertEquals(4,gameNumber.length());
     }
 }
